@@ -1,0 +1,107 @@
+# === Secrets and credentials (NEVER commit) ===
+*.key
+*.pem
+id_rsa*
+id_ed25519*
+id_ecdsa*
+authorized_keys
+known_hosts
+*.p12
+*.pfx
+.env
+.env.*
+secrets/
+credentials/
+
+# === Extracted key material (legal risk) ===
+# HDCP keys, DRM keys, TEE keys, device-bound secrets
+hdcp_key_*.bin
+hdcp_keyset_*.bin
+hdcp_*.bin
+drm_*.bin
+tee_key_*.bin
+device_key_*.bin
+captured_keys/
+extracted_keys/
+keys-wrapped/
+
+# === Samsung firmware binaries (copyright) ===
+# Do not redistribute Samsung's compiled code
+*.tee
+58D50001*
+*TA*.bin
+libtzcapturec*.so
+libvideo-capture*.so
+libdisplay-capture-api*.so
+libhwcrypto*.so
+libcryptocore*.so
+MultiControlService.dll
+MultiControlService.dll.*
+*.dll.backup*
+
+# === Device-specific captured data ===
+# Logs, PCAPs, memory dumps from the TV
+*.ppm
+*.raw
+*.jpg
+*.png
+!docs/images/*.png
+*.pcap
+*.dump
+mem_dump*
+kernel_dump*
+monitor/snap-*
+monitor/trend.log
+
+# === Build artifacts ===
+build/output/
+build/toolchain/
+*.o
+*.ko
+*.so
+!src/**/*.so.in
+*.mod
+*.mod.c
+Module.symvers
+modules.order
+.tmp_versions/
+
+# === Cross-compile toolchain downloads ===
+dockcross-*
+toolchain-*/
+cross-compile/output/
+
+# === Dropbear build (vendored tarball only, not compiled binaries) ===
+dropbear-build/dropbear-*/
+!dropbear-build/*.tar.bz2
+dropbear-build/*.sig
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# === Editors ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# === Temporary ===
+*.tmp
+*.log
+*.bak
+scratchpad/
+tmp/
+tests/output/
+
+# === Upstream .git (we vendor source, not history) ===
+upstream/**/.git
+upstream/**/.github
